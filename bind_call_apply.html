@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Bind, Call, and Apply</title>
+</head>
+<body>
+    <button name='button'>Click Me</button>
+</body>
+<script>
+    var customObject = {
+        name:'California, Eureka',
+        onClick:function(myParam){
+            console.log("I've been clicked");
+            console.log(myParam, "I've been passed by bind");
+            console.log(this.name);
+        }
+    }
+    var newObject = {
+        name:"West Virginia,  Montani semper liberi"
+    }
+        // our behavior on click.
+    $('button').click(customObject.onClick.bind(customObject,"Bind this argument!"));
+</script>
+</html>
