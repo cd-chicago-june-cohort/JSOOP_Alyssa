@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Hunting GitHub</title>
+</head>
+<body>
+    <button id='name_getter'>Click here to see my name from the GitHub API</button>
+    <div id="name"></div>
+</body>
+<script>
+    var button = document.getElementById('name_getter')
+    button.addEventListener('click', printName)
+    function printName(){
+        $.get('https://api.github.com/users/ANickow', displayName)
+        function displayName(data){ 
+            document.getElementById('name').innerHTML = '<h1>' + data.name + '</h1>';
+        }
+    }
+    
+</script>
+</html>
